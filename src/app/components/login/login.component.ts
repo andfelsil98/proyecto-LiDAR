@@ -57,10 +57,10 @@ export class LoginComponent implements OnInit {
 
   search() {
     this.createUserService.getUsers(this.loginForm.value.user)
-    .subscribe(data=> {
+    .subscribe((data:Usuarios)=> {
       this.users = data;
       console.log(data);
-      //const { user } = data[0];
+      //const { user:string } = data[0];
       //console.log(user);
       //if (this.loginForm.value.user === this.users){
         //console.log("entro")

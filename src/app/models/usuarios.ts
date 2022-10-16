@@ -1,5 +1,4 @@
 export interface Usuarios {
-  usuario: string,
-  correo: string,
-  id?:string
+  user : string,
+  email: string,
 }
