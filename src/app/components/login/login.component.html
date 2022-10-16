@@ -13,17 +13,19 @@
 
       <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-user"></i></span>
       <input type="text" class="form-control" formControlName="user" placeholder="Digite su usuario" aria-label="Username" aria-describedby="addon-wrapping" required>
-      <p>
-        {{ loginForm.value.user }}
-      </p>
     </div>
   </div>
 
     <!-- <input formControlName="email" class="form-control" type="text" class="data_email" required> -->
  <div>
   <button type="button" [disabled]="userField?.hasError('required')" [class.inactive--green]="userField?.hasError('required')" [class.css-button-arrow--green]= "!userField?.hasError('required')" (click)="search()">Validar Usuario</button>
-  <div *ngIf="validar === false">
-    <a routerLink="/pruebas">HOLAAA</a>
+  <br>
+  <div *ngIf="validar === 2 && userField?.dirty" class="alert alert-danger" role="alert">
+    El usuario no se encuentra registrado
+  </div>
+  <div *ngIf="validar === 1 && !userField?.hasError('required')">
+    <button type="button" class="btn btn-primary" routerLink="/pruebas" (click)="ingreso()">Ingresar</button>
+    <!-- <a routerLink="/pruebas">HOLAAA</a> -->
   </div>
       <!-- <div *ngFor="let user of users">
         <p *ngIf="user.usuario">hola {{user.usuario}} {{user.correo}}</p>

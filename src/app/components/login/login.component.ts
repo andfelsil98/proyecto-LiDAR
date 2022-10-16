@@ -16,12 +16,16 @@ import { Usuarios } from 'src/app/models/usuarios';
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
-  nombre = '';
-  control = '';
-  usuario = '';
+  // nombre = '';
+  // control = '';
+  // usuario = '';
   // result = '';
   users: any;
-  validar: boolean = false;
+  data_user: Usuarios | null = null;
+  user: string = '';
+  email: string = '';
+  validar: number = 0;
+  contenido: number = 0;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -33,6 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     // this.createUserService.getPosts()
     // .subscribe( res => {
     //   // this.posts = [{id:'1', 'title':'titulo de prueba', 'content': 'contenido de prueba', 'author':'Andres'}]
@@ -57,29 +62,49 @@ export class LoginComponent implements OnInit {
 
   search() {
     this.createUserService.getUsers(this.loginForm.value.user)
-    .subscribe((data:Usuarios)=> {
-      this.users = data;
-      console.log(data);
-      //const { user:string } = data[0];
-      //console.log(user);
-      //if (this.loginForm.value.user === this.users){
-        //console.log("entro")
-        //this.validar = true
-      //} else {
-      //  console.log("no entro")
-      //}
+    .subscribe( data => {
+      // this.users = data;
+      // console.log(data);
+      this.contenido = data.length;
+      if (data.length >0 ) { //con decir que data.length es mayor a cero ya estoy indicando indirectamente que si existe
+        this.data_user = data[0] as Usuarios;
+        // this.user = this.data_user.user;
+        // if (this.user === this.loginForm.value.user){
+        //   console.log('si EXISTEEEE')
+        // } else {
+        //   console.log("no es compatible")
+        // }
+        this.validar = 1;
+        // console.log('si EXISTEE')
+        // console.log(this.validar)
+        // console.log(this.loginForm.value.user)
+        console.log(this.data_user.email);
+        this.user = this.loginForm.value.user
+
+      } else {
+        this.validar = 2;
+        console.log('no existe')
+      }
+
     })
-    this.navbar.recibirDatos(this.loginForm.value.user)
   }
 
-  // registeredUser() {
-  //   this.usuario = 'registrado';
-  //   // this.loginForm.value.user = '';
+  ingreso() {
+    this.validar = 0
+    if (this.user){
+      console.log(this.user)
+      this.navbar.recibirDatos(this.user)
+    }else {
+      console.log('no hay nada')
+      this.navbar.recibirDatos('');
+    }
+
+  }
+
+  // removeval() {
+  //   this.validar = 0;
   // }
 
-  // rtnLogin() {
-  //   this.usuario = '';
-  // }
 //getters
   get userField() {
     return this.loginForm.get('user');

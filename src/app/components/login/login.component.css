@@ -18,8 +18,9 @@ input {
 }
 
 button {
-  width: 150px;
+  width: 180px;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* // .messages {

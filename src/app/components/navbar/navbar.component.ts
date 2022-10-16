@@ -20,4 +20,8 @@ export class NavbarComponent implements OnInit {
     })
   }
 
+  remove() {
+    this.navbar.recibirDatos('');
+  }
+
 }

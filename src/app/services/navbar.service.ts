@@ -9,7 +9,12 @@ export class NavbarService {
   constructor() { }
 
   recibirDatos(e:any) {
-    // console.log(e)
+    console.log("entro al servicio",e)
+    this.change.emit(e);
+  }
+
+  mostrarDatos(e:any) {
+    console.log("entro al servicio",e)
     this.change.emit(e);
   }
 }

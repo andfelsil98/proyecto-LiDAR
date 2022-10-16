@@ -5,6 +5,8 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 //interfaces
 import { Usuarios } from '../models/usuarios';
 
+
+// import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,9 +36,10 @@ export class CreateUserService {
       // .snapshotChanges() //esto captura el estado actual de la coleccion en firestore
   }
 
-  getUsers(user:string) {
+  getUsers(user:string){
     return this.angularFirestore
       .collection("login", ref => ref.where("user", "==", user))
       .valueChanges();
   }
+
 }
