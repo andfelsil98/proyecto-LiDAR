@@ -33,4 +33,10 @@ export class CreateUserService {
       .collection("login",ref => ref.where('user', '==', true)).get();
       // .snapshotChanges() //esto captura el estado actual de la coleccion en firestore
   }
+
+  getUsers() {
+    return this.angularFirestore
+      .collection("login").valueChanges();
+      // .snapshotChanges() //esto captura el estado actual de la coleccion en firestore
+  }
 }

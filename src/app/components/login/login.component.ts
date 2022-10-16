@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
   }
 
   search() {
-    this.createUserService.getPosts()
+    this.createUserService.getUsers()
     .subscribe(data => {
       console.log(data);
     })
