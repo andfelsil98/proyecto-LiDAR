@@ -1,0 +1,31 @@
+<div class="proof-container font">
+
+
+  <!-- <a routerLink="/login">Salir</a> -->
+  <h2>Recomendaciones de Angulo mínimo y máximo </h2>
+  <label for="min">Angulo minimo</label>
+  <div class="input-group mb-3">
+    <input id="min" type="number"  [(ngModel)]="min" class="form-control" placeholder="Digite el angulo minimo" aria-label="minimo" aria-describedby="basic-addon1">
+  </div>
+  <!-- <p>
+    {{ min }}
+  </p> -->
+  <!-- <input id="min" type="text" [(ngModel)]="min"> -->
+  <label for="max">Angulo maximo</label>
+  <div class="input-group mb-3">
+    <input id="max" type="number"  [(ngModel)]="max" class="form-control" placeholder="Digite el angulo maximo" aria-label="maximo" aria-describedby="basic-addon1">
+  </div>
+  <!-- <input id="max" type="text" [(ngModel)]="max"> -->
+  <label for="turbiedad">Turbiedad</label>
+  <div class="input-group mb-3">
+    <input id="turbiedad" type="number"  [(ngModel)]="turbiedad" class="form-control" placeholder="Digite la turbiedad" aria-label="turb" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="op-buttons">
+    <button class="btn btn-warning">Ejecutar prueba instantanea</button>
+    <button class="btn btn-info">Ejecutar prueba grabacion</button>
+  </div>
+
+  <button routerLink="/login" type="button" class="btn btn-danger" (click)="remove()">Salir</button>
+  <!-- <input id="turbiedad" type="text" [(ngModel)]="turbiedad"> -->
+</div>

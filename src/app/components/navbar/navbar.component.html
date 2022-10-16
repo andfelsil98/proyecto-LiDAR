@@ -1,0 +1,17 @@
+<nav class="font">
+  <div class="navbar" >
+    <h2>Proyecto LiDAR</h2>
+
+    <ul>
+      <li>
+        <a routerLinkActive="active" routerLink="inicio"><i class="fa-solid fa-house"></i> Inicio</a>
+      </li>
+      <li>
+        <a routerLink="login"><i class="fa-sharp fa-solid fa-right-to-bracket"></i> Login</a>
+      </li>
+      <li>
+        <a routerLink="pruebas" [class.inactive]="!usuario" ><i class="fa-solid fa-vial" ></i><span *ngIf="usuario"> Pruebas habilitadas</span> <span *ngIf="!usuario"> Pruebas deshabilitadas</span> </a>
+      </li>
+    </ul>
+  </div>
+

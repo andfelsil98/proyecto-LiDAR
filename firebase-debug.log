@@ -1,0 +1,73 @@
+[debug] [2022-10-16T00:08:47.218Z] ----------------------------------------------------------------------
+[debug] [2022-10-16T00:08:47.220Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Administrador\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-10-16T00:08:47.220Z] CLI Version:   11.14.4
+[debug] [2022-10-16T00:08:47.221Z] Platform:      win32
+[debug] [2022-10-16T00:08:47.221Z] Node Version:  v16.17.0
+[debug] [2022-10-16T00:08:47.222Z] Time:          Sat Oct 15 2022 19:08:47 GMT-0500 (hora estándar de Colombia)
+[debug] [2022-10-16T00:08:47.222Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-16T00:08:47.230Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-16T00:08:47.231Z] > authorizing via signed-in user (andres.silva-mo@mail.escuelaing.edu.co)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Administrador\Desktop\proyecto-LiDAR
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-10-16T00:09:33.751Z] > refreshing access token with scopes: []
+[debug] [2022-10-16T00:09:33.754Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-10-16T00:09:33.754Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-10-16T00:09:34.023Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-10-16T00:09:34.023Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-10-16T00:09:34.039Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2022-10-16T00:09:34.709Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2022-10-16T00:09:34.709Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project proyecto-lidar (proyecto-lidar) 
+[info] 
+=== Firestore Setup
+[debug] [2022-10-16T00:09:40.379Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/proyecto-lidar/services/firestore.googleapis.com [none]
+[debug] [2022-10-16T00:09:40.379Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/proyecto-lidar/services/firestore.googleapis.com x-goog-quota-user=projects/proyecto-lidar
+[debug] [2022-10-16T00:09:41.153Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/proyecto-lidar/services/firestore.googleapis.com 200
+[debug] [2022-10-16T00:09:41.153Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/proyecto-lidar/services/firestore.googleapis.com [omitted]
+[debug] [2022-10-16T00:09:41.154Z] >>> [apiv2][query] GET https://appengine.googleapis.com/v1/apps/proyecto-lidar [none]
+[debug] [2022-10-16T00:09:41.805Z] <<< [apiv2][status] GET https://appengine.googleapis.com/v1/apps/proyecto-lidar 200
+[debug] [2022-10-16T00:09:41.805Z] <<< [apiv2][body] GET https://appengine.googleapis.com/v1/apps/proyecto-lidar {"name":"apps/proyecto-lidar","id":"proyecto-lidar","authDomain":"gmail.com","locationId":"us-central","codeBucket":"staging.proyecto-lidar.appspot.com","servingStatus":"SERVING","defaultHostname":"proyecto-lidar.uc.r.appspot.com","defaultBucket":"proyecto-lidar.appspot.com","serviceAccount":"proyecto-lidar@appspot.gserviceaccount.com","gcrDomain":"us.gcr.io","databaseType":"CLOUD_FIRESTORE","featureSettings":{"splitHealthChecks":true,"useContainerOptimizedOs":true}}
+[debug] [2022-10-16T00:09:41.805Z] database_type: CLOUD_FIRESTORE
+[debug] [2022-10-16T00:09:41.806Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-16T00:09:41.806Z] > authorizing via signed-in user (andres.silva-mo@mail.escuelaing.edu.co)
+[debug] [2022-10-16T00:09:41.806Z] [iam] checking project proyecto-lidar for permissions ["firebase.projects.get"]
+[debug] [2022-10-16T00:09:41.807Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/proyecto-lidar:testIamPermissions [none]
+[debug] [2022-10-16T00:09:41.809Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/proyecto-lidar:testIamPermissions x-goog-quota-user=projects/proyecto-lidar
+[debug] [2022-10-16T00:09:41.809Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/proyecto-lidar:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-10-16T00:09:42.331Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/proyecto-lidar:testIamPermissions 200
+[debug] [2022-10-16T00:09:42.332Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/proyecto-lidar:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2022-10-16T00:09:50.730Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/proyecto-lidar/releases pageSize=10&pageToken=
+[debug] [2022-10-16T00:09:52.109Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/proyecto-lidar/releases 200
+[debug] [2022-10-16T00:09:52.109Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/proyecto-lidar/releases {"releases":[{"name":"projects/proyecto-lidar/releases/cloud.firestore","rulesetName":"projects/proyecto-lidar/rulesets/0f8307b7-f8b1-4c49-8042-051375a823d3","createTime":"2022-10-15T23:51:19.394301Z","updateTime":"2022-10-15T23:51:19.394301Z"}]}
+[debug] [2022-10-16T00:09:52.110Z] Found ruleset: projects/proyecto-lidar/rulesets/0f8307b7-f8b1-4c49-8042-051375a823d3
+[debug] [2022-10-16T00:09:52.110Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/proyecto-lidar/rulesets/0f8307b7-f8b1-4c49-8042-051375a823d3 [none]
+[debug] [2022-10-16T00:09:52.353Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/proyecto-lidar/rulesets/0f8307b7-f8b1-4c49-8042-051375a823d3 200
+[debug] [2022-10-16T00:09:52.353Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/proyecto-lidar/rulesets/0f8307b7-f8b1-4c49-8042-051375a823d3 [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 

@@ -1,0 +1,27 @@
+
+<form [formGroup]="loginForm" novalidate class="font">
+
+  <h1 style="font-weight: bold">Ingresar</h1>
+
+  <div class="user_data">
+
+    <!-- <input formControlName="user" class="form-control" type="text" class="data_user" required> -->
+    <label class="form-label">Usuario: </label>
+    <div class="input-group flex-nowrap">
+
+      <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-user"></i></span>
+      <input type="text" class="form-control" formControlName="user" placeholder="Digite su usuario" aria-label="Username" aria-describedby="addon-wrapping" required>
+    </div>
+  </div>
+
+    <!-- <input formControlName="email" class="form-control" type="text" class="data_email" required> -->
+ <div>
+  <button type="button" class="btn btn-secondary" routerLink="/registro" >Volver</button>
+  <button type="button" [disabled]="userField?.hasError('required')" [class.inactive--green]="userField?.hasError('required')" [class.css-button-arrow--green]= "!userField?.hasError('required')" routerLink="/pruebas" (click)="submit()">Ingresar</button>
+    <div *ngFor="let user of users">
+      <p *ngIf="user.usuario">hola {{user.usuario}} {{user.correo}}</p>
+    </div>
+ </div>
+
+
+</form>

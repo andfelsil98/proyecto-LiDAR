@@ -1,0 +1,125 @@
+$basic-dark-color: #212121;
+$basic-light-color: #fff;
+$border-radius: 50%;
+$font-size: 25px;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.all-content{
+  overflow:hidden;
+}
+.content{
+  height: 62.7vh;
+  width: 100%;
+  padding: 5%;
+}
+
+
+//general effects
+
+.effect {
+  width: 100%;
+  height: 25vh;
+  padding: 50px 0px 70px 0px;
+  background-color: $basic-dark-color;
+
+  h2 {
+    color: $basic-light-color;
+    font: {
+      family: 'Playfair Display', serif;
+      weight: 400;
+      size: 25px;
+    }
+    letter-spacing: 3px;
+  }
+
+  &:nth-child(2) {
+    margin-top: 50px;
+  }
+
+  &:nth-child(2n+1) {
+    background-color: $basic-light-color;
+
+    h2 {
+      color: $basic-dark-color;
+    }
+  }
+
+  &:nth-child(2n) {
+
+     a {
+      color: $basic-light-color;
+      border-color: $basic-light-color;
+    }
+  }
+
+  .buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* styles for a common effect !!!YOU NEED THEM */
+.effect {
+  display: flex;
+  place-content: center;
+
+  a {
+    text-decoration: none !important;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    margin-right: 20px;
+    font-size: $font-size;
+    overflow: hidden;
+    position: relative;
+    color: $basic-dark-color; //or change to your own color
+    border: 2px solid $basic-dark-color; //or change to your own color
+
+    i {
+      position: relative;
+      z-index: 3;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    i {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+//thurio
+.effect.thurio {
+
+  a {
+    transition: border-radius 0.2s linear 0s;
+    transform: rotate(45deg);
+
+    i {
+      transition: transform 0.01s linear 0s;
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      border-radius: 0px;
+    }
+  }
+}
