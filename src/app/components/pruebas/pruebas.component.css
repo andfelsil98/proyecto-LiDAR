@@ -15,4 +15,16 @@ button:disabled {
 .op-buttons button {
   margin: 10px 0 10px 0;
   margin-right: 10px;
+
+}
+
+@media (max-width: 600px){
+  .op-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  h2 {
+    display: flex;
+    text-align: center;
+  }
 }

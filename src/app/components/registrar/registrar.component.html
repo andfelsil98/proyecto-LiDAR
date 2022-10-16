@@ -1,8 +1,6 @@
 <form [formGroup]="loginForm" novalidate class="font">
   <h1  style="font-weight: bold">Registrarse</h1>
-  <div  class="alert alert-warning" role="alert">
-    Debes registrarte para que se habiliten las pruebas
-  </div>
+
   <div class="user_data">
 
     <!-- <input formControlName="user" class="form-control" type="text" class="data_user" required> -->
@@ -31,14 +29,14 @@
     </div>
     <!-- <input formControlName="email" class="form-control" type="text" class="data_email" required> -->
   </div>
-  <button type="button" [disabled]="!loginForm.valid" [class.inactive--green]="!loginForm.valid" [class.css-button-arrow--green]= 'loginForm.valid' routerLink="/pruebas" (click)="submit()">Registrarme</button>
-  <div>
+
+  <div class="btn">
   <!-- <button *ngIf="usuario" type="button" class="btn btn-secondary" (click)="rtnLogin()" >Volver</button> -->
   <!-- <button *ngIf="usuario" type="button" [disabled]="userField?.hasError('required')" [class.inactive--green]="userField?.hasError('required')" [class.css-button-arrow--green]= "!userField?.hasError('required')" routerLink="/pruebas" (click)="submit()">Ingresar</button> -->
-
+  <button type="button" class="btn btn-secondary" routerLink="/login" >Volver</button>
+  <button type="button" [disabled]="!loginForm.valid" [class.inactive--green]="!loginForm.valid" [class.css-button-arrow--green]= 'loginForm.valid' routerLink="/pruebas" (click)="submit()">Registrarme</button>
   </div>
-  <br>
-  <p>Si ya estas registrado <a routerLink="/login">haz click aqui</a></p>
+
 
 
 </form>

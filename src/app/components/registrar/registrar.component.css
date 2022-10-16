@@ -9,6 +9,11 @@ form {
   height: 65vh;
 }
 
+.btn {
+  display: flex;
+  place-content: center;
+}
+
 input {
   width: 100px;
 }

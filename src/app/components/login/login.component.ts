@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
   control = '';
   usuario = '';
   // result = '';
-  users: Usuarios[] = [];
+  users: any;
+  validar: boolean = false;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -55,9 +56,18 @@ export class LoginComponent implements OnInit {
   }
 
   search() {
-    this.createUserService.getUsers()
-    .subscribe(data => {
+    this.createUserService.getUsers(this.loginForm.value.user)
+    .subscribe(data=> {
+      this.users = data;
       console.log(data);
+      //const { user } = data[0];
+      //console.log(user);
+      //if (this.loginForm.value.user === this.users){
+        //console.log("entro")
+        //this.validar = true
+      //} else {
+      //  console.log("no entro")
+      //}
     })
     this.navbar.recibirDatos(this.loginForm.value.user)
   }

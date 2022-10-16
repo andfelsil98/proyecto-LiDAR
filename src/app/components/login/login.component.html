@@ -2,7 +2,9 @@
 <form [formGroup]="loginForm" novalidate class="font">
 
   <h1 style="font-weight: bold">Ingresar</h1>
-
+  <div  class="alert alert-warning" role="alert">
+    Debes estar registrado para que se habiliten las pruebas
+  </div>
   <div class="user_data">
 
     <!-- <input formControlName="user" class="form-control" type="text" class="data_user" required> -->
@@ -11,17 +13,24 @@
 
       <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-user"></i></span>
       <input type="text" class="form-control" formControlName="user" placeholder="Digite su usuario" aria-label="Username" aria-describedby="addon-wrapping" required>
+      <p>
+        {{ loginForm.value.user }}
+      </p>
     </div>
   </div>
 
     <!-- <input formControlName="email" class="form-control" type="text" class="data_email" required> -->
  <div>
-  <button type="button" class="btn btn-secondary" routerLink="/registro" >Volver</button>
-  <button type="button" [disabled]="userField?.hasError('required')" [class.inactive--green]="userField?.hasError('required')" [class.css-button-arrow--green]= "!userField?.hasError('required')" routerLink="/pruebas" (click)="search()">Ingresar</button>
+  <button type="button" [disabled]="userField?.hasError('required')" [class.inactive--green]="userField?.hasError('required')" [class.css-button-arrow--green]= "!userField?.hasError('required')" (click)="search()">Validar Usuario</button>
+  <div *ngIf="validar === false">
+    <a routerLink="/pruebas">HOLAAA</a>
+  </div>
       <!-- <div *ngFor="let user of users">
         <p *ngIf="user.usuario">hola {{user.usuario}} {{user.correo}}</p>
       </div> -->
  </div>
+ <br>
+ <p>Si no estas registrado <a routerLink="/registro">haz click aqui</a></p>
 
 
 </form>
