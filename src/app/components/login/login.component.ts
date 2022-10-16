@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   nombre = '';
   control = '';
   usuario = '';
+  // result = '';
   users: Usuarios[] = [];
 
   constructor(
@@ -31,18 +32,18 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.createUserService.getPosts()
-    .subscribe( res => {
-      // this.posts = [{id:'1', 'title':'titulo de prueba', 'content': 'contenido de prueba', 'author':'Andres'}]
-      this.users = res.map( e => {//en este punto estoy asignando a posts el id (payload.doc.id) y los datos (payload.doc.data)
-        return {
-          id: e.payload.doc.id,
-          ...e.payload.doc.data() as {}
-        }as Usuarios;
-      });
+    // this.createUserService.getPosts()
+    // .subscribe( res => {
+    //   // this.posts = [{id:'1', 'title':'titulo de prueba', 'content': 'contenido de prueba', 'author':'Andres'}]
+    //   this.users = res.map( e => {//en este punto estoy asignando a posts el id (payload.doc.id) y los datos (payload.doc.data)
+    //     return {
+    //       id: e.payload.doc.id,
+    //       ...e.payload.doc.data() as {}
+    //     }as Usuarios;
+    //   });
 
-      console.log(this.users)
-    });
+    //   console.log(this.users)
+    // });
   }
 
   private buildForm() {
@@ -53,8 +54,11 @@ export class LoginComponent implements OnInit {
     // console.log(this.loginForm);
   }
 
-  submit() {
-    this.createUserService.createUser(this.loginForm.value)
+  search() {
+    this.createUserService.getPosts()
+    .subscribe(data => {
+      console.log(data);
+    })
     this.navbar.recibirDatos(this.loginForm.value.user)
   }
 

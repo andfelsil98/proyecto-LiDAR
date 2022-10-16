@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   { path: 'inicio', component:InicioComponent },
   { path: 'login', component:LoginComponent },
-  { path: 'pruebas/:id', component:PruebasComponent },
+  { path: 'pruebas', component:PruebasComponent },
   { path: 'registro', component:RegistrarComponent }
 
 ];

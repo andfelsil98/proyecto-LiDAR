@@ -17,10 +17,10 @@
     <!-- <input formControlName="email" class="form-control" type="text" class="data_email" required> -->
  <div>
   <button type="button" class="btn btn-secondary" routerLink="/registro" >Volver</button>
-  <button type="button" [disabled]="userField?.hasError('required')" [class.inactive--green]="userField?.hasError('required')" [class.css-button-arrow--green]= "!userField?.hasError('required')" routerLink="/pruebas" (click)="submit()">Ingresar</button>
-    <div *ngFor="let user of users">
-      <p *ngIf="user.usuario">hola {{user.usuario}} {{user.correo}}</p>
-    </div>
+  <button type="button" [disabled]="userField?.hasError('required')" [class.inactive--green]="userField?.hasError('required')" [class.css-button-arrow--green]= "!userField?.hasError('required')" routerLink="/pruebas" (click)="search()">Ingresar</button>
+      <!-- <div *ngFor="let user of users">
+        <p *ngIf="user.usuario">hola {{user.usuario}} {{user.correo}}</p>
+      </div> -->
  </div>
 
 
